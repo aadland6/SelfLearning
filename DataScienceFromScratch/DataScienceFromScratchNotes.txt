@@ -1,0 +1,11 @@
+-- Overfitting:
+	Model that performs well on training data but poorly on testing data 
+
+-- Train, Validation, test	
+	Split three parts for training, model selection, and final testing 
+
+-- Precision
+	Measures how accuracy of positive predictions 
+
+-- Recall 
+	Measures the fraction of the positives a model identified 

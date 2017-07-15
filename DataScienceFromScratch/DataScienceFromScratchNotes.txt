@@ -21,3 +21,6 @@
 
 -- Calculate Euclidean distance in n dimensions
 	sqrt((p1 - q1) **2 + (p2 - q2) ** 2 + (pn - qn) ** 2)
+
+-- Curse of dimensionality
+	too many dimensions make it difficult to identify the nearest points

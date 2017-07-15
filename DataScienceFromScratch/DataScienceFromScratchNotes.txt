@@ -9,3 +9,15 @@
 
 -- Recall 
 	Measures the fraction of the positives a model identified 
+
+-- Calculate Precision
+	tp / (tp + fp) 
+
+-- Calculate recall 
+	tp / (tp + fn) 
+
+-- Straight line distance in an arbitrary space
+	Euclidean distance 
+
+-- Calculate Euclidean distance in n dimensions
+	sqrt((p1 - q1) **2 + (p2 - q2) ** 2 + (pn - qn) ** 2)

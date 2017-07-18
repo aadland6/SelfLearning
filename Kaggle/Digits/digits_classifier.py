@@ -34,7 +34,7 @@ if __name__ == "__main__":
     knn_clf = neighbors.KNeighborsClassifier(n_neighbors=10,
                                              metric="euclidean")
     knn_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
-    knn_validate = knn_clf.predict(breaks["CVLabels"])
+    knn_validate = knn_clf.predict(breaks["CValues"])
 #    train, validate, test = np.split(df.sample(frac=1), 
 #                                     [int(.6*len(df)), int(.8*len(df))])
 #    validate_labels, test_label = validate["label"], test["label"]

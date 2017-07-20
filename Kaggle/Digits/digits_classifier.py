@@ -7,7 +7,7 @@ Created on Tue Jul 11 09:10:54 2017
 import pandas as pd
 import numpy as np
 import os 
-from sklearn.model_selection import train_test_split
+# from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn import neighbors 
 from sklearn import ensemble
@@ -45,6 +45,7 @@ if __name__ == "__main__":
     rf_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
     rf_validate = rf_clf.predict(breaks["CValues"])
     rf_report = classification_report(breaks["CVLabels"], rf_validate)
+    print(rf_report)
     #### SVM Classifier ####
-    svm_clf = svm.SVC(decision_function_shape="ovo", random_state=42)
-    svm_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
+    # svm_clf = svm.SVC(decision_function_shape="ovo", random_state=42)
+    # svm_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])

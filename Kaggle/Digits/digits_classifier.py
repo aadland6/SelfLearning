@@ -8,12 +8,12 @@ import pandas as pd
 import numpy as np
 import os 
 from sklearn.model_selection import train_test_split
-from sklearn import  metrics
+from sklearn.metrics import classification_report
 from sklearn import neighbors 
 
 def train_validate_test(df):
     """Breaks the data into training, test, and validation sets"""
-    train, validate, test = np.split(df.sample(frac=1), 
+    train, validate, test = np.split(df.sample(frac=1, random_state=42), 
                                      [int(.6*len(df)), int(.8*len(df))])
     train_labels = train["label"]
     train_values = train.drop("label", axis=1)
@@ -35,6 +35,8 @@ if __name__ == "__main__":
                                              metric="euclidean")
     knn_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
     knn_validate = knn_clf.predict(breaks["CValues"])
+    knn_report = classification_report(breaks["CVLabels"], knn_validate)
+    print(knn_report)
 #    train, validate, test = np.split(df.sample(frac=1), 
 #                                     [int(.6*len(df)), int(.8*len(df))])
 #    validate_labels, test_label = validate["label"], test["label"]

@@ -10,6 +10,7 @@ import os
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn import neighbors 
+from sklearn import ensemble
 
 def train_validate_test(df):
     """Breaks the data into training, test, and validation sets"""
@@ -37,21 +38,9 @@ if __name__ == "__main__":
     knn_validate = knn_clf.predict(breaks["CValues"])
     knn_report = classification_report(breaks["CVLabels"], knn_validate)
     print(knn_report)
-#    train, validate, test = np.split(df.sample(frac=1), 
-#                                     [int(.6*len(df)), int(.8*len(df))])
-#    validate_labels, test_label = validate["label"], test["label"]
-#    validate.drop("label", axis=1)
-#    test.drop("label", axis=1)
-
-#    labels = full_train["label"]
-#    values = full_train.drop("label", axis=1)
-#    labels_train, labels_test, values_train, values_test = train_test_split(
-#            labels, values, test_size = .2,random_state=42)
-#    knn_clf = neighbors.KNeighborsClassifier(n_neighbors=10,
-#                                             metric="euclidean")
-#    knn_clf.fit(values_train, labels_train)
-#    print("Predicting")
-#    knn_test = knn_clf.predict(values_test)
-#    knn_series = pd.Series(knn_test, index=labels_test.index)
-#    predicted_df = pd.DataFrame({"Actual":labels_test, "KNNPrediction":knn_test})
-#    predicted_df.to_csv("KNNPredictions.csv")
+    #### Random Forest Break ####
+    rf_clf = ensemble.RandomForestClassifier(n_estimators=1000, # number of trees
+                                             random_state=42)
+    rf_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
+    rf_validate = rf_clf.predict(breaks["CValues"])
+    rf_report = classification_report(breaks["CVLabels"], rf_validate)

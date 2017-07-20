@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn import neighbors 
 from sklearn import ensemble
+from sklearn import svm
 
 def train_validate_test(df):
     """Breaks the data into training, test, and validation sets"""
@@ -38,9 +39,12 @@ if __name__ == "__main__":
     knn_validate = knn_clf.predict(breaks["CValues"])
     knn_report = classification_report(breaks["CVLabels"], knn_validate)
     print(knn_report)
-    #### Random Forest Break ####
+    #### Random Forest Classifier ####
     rf_clf = ensemble.RandomForestClassifier(n_estimators=1000, # number of trees
                                              random_state=42)
     rf_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
     rf_validate = rf_clf.predict(breaks["CValues"])
     rf_report = classification_report(breaks["CVLabels"], rf_validate)
+    #### SVM Classifier ####
+    svm_clf = svm.SVC(decision_function_shape="ovo", random_state=42)
+    svm_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])

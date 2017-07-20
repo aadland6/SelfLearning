@@ -11,7 +11,7 @@ import os
 from sklearn.metrics import classification_report
 from sklearn import neighbors 
 from sklearn import ensemble
-from sklearn import svm
+from sklearn import linear_model
 
 def train_validate_test(df):
     """Breaks the data into training, test, and validation sets"""

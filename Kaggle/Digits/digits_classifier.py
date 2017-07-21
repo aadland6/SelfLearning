@@ -46,6 +46,8 @@ if __name__ == "__main__":
     rf_validate = rf_clf.predict(breaks["CValues"])
     rf_report = classification_report(breaks["CVLabels"], rf_validate)
     print(rf_report)
-    #### SVM Classifier ####
-    # svm_clf = svm.SVC(decision_function_shape="ovo", random_state=42)
-    # svm_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
+    #### Logistic Regression ####
+    lr_clf = linear_model.LogisticRegression(random_state=42, multi_class="ovr")
+    lr_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
+    lr_validate = lr_clf.predict(breaks["CValues"])
+    lr_report = classification_report(breaks["CVLabels"], lr_validate)

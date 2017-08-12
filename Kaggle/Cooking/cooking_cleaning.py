@@ -8,8 +8,11 @@ stopwords = ["yellow", "purple", "green", "black",
              "purple", "white", "red", "chopped", 
              "diced", "grated", "crushed", "small", "medium",
              "large", "low-fat", "fresh", "plain", 
-             "all-purpose", "extra-virgin", "nonfat", "dry","reduced-fat", "minced", "plain", "crushed", "chopped", "whole", "brown",
-             "boiling", "shredded", "grated", "pitted", "sliced"]
+             "all-purpose", "extra-virgin", "nonfat", "dry","reduced-fat", 
+             "minced", "plain", "crushed", "chopped", "whole", "brown",
+             "boiling", "shredded", "grated", "pitted", "sliced", "heavy", 
+             "freshly", "yukon", "gold", "chunky", "low", "sodium", "dark",
+             "part-skim", "frozen"]
 
 def remove_stopwords(ingredient, stopwords):
     """ removes any words in the stopwords list
@@ -30,7 +33,8 @@ def remove_colors(ingredient):
 def shorten_ingredient(ingredient):
     """ shortens an ingredient to the core term
     """
-    terms = set(["chicken", "flour", "milk", "rice"])
+    terms = set(["chicken", "flour", "milk", "rice", "pork", 
+                 "beef", "lettuce", "beans", "shrimp", "salt"])
     # get just the overlapping terms in the set
     intersection = set(ingredient.split(" ")).intersection(terms)
     if intersection:

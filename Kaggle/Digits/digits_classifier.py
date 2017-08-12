@@ -51,3 +51,4 @@ if __name__ == "__main__":
     lr_clf.fit(breaks["TrainValues"], breaks["TrainLabels"])
     lr_validate = lr_clf.predict(breaks["CValues"])
     lr_report = classification_report(breaks["CVLabels"], lr_validate)
+    print(lr_report)

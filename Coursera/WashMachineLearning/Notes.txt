@@ -1,0 +1,22 @@
+Linear Classifiers and Logistic Regression:
+
+Motivationg example:
+	- restaurant reviews
+	- want to capture sentiment as it relates to sushi
+
+Intution about linear classifers:
+	- takes an input (X) and outputs a prediction (y)
+	- in sentiment classifaction, coefficents are words with numeric values:
+		good: 1.0
+		great: 1.5
+		awsome: 2.7
+		bad: -1.0
+		terrible: -2.5 
+	- A sentence suchs as: "the sushi was great but the service was therribe" 
+		score( great 1.5 + -2.5) = -1
+	- Need to train the weights of the coefficents from data 
+	- After learning the classifier, evaluate for accuracy
+	- Decison boundaries: repersent a break along some feature space 
+		two features: line
+		three features: plane
+		four + features: hyperplane

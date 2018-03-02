@@ -31,6 +31,7 @@ def get_r2(actual, predicted):
 
 def gradient_descent(s_slope, s_intercept, l_rate, iter_val, x_train, y_train):
     """gradient descent function 
+        b = a - l_rate
     """
     for i in range(iter_val):
         int_slope = 0 
@@ -59,7 +60,8 @@ if __name__ == "__main__":
     learning_rate = .001
     start_slope = 0
     start_interscept = 0
-    iteration = 100000
+    iteration = 100
     grad_slope, grad_interscept = gradient_descent(start_slope, start_interscept, 
                                                    learning_rate, iteration, x_train, y_train)
     values = [xi * grad_slope + grad_interscept for xi in x_train]
+    

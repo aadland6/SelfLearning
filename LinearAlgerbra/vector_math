@@ -15,12 +15,6 @@ def add_vectors(a_list, b_list):
         c_list.append(current_item)
     return c_list
 
-def subtract_vectors(a, b):
-    """Subtracts vectors
-    """
-    negative_b = [abs(x) - x for x in b]
-    return add_vectors(a, negative_b)
-
 if __name__ == "__main__":
     a_list = [1, -2]
     b_list = [-2, 1]
@@ -28,6 +22,6 @@ if __name__ == "__main__":
     print(c_list)
     # subtraction example 
     d_list = [-1, 2]
-    b_list = [1, -2]
+    b_list = [1, -z2]
     value = subtract_vectors(d_list, b_list)
     print(value)

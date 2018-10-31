@@ -64,6 +64,7 @@ def create_df(deck_link, target):
 if __name__ == "__main__":
     counter = 20415
     while counter > 100:
+        print(counter)
         try:
             cleaned = crawl_event(counter)
             crawl_deck(cleaned )
